@@ -1,0 +1,21 @@
+<form [formGroup]="formGroup" (ngSubmit)="sendData()">
+    <div class="header">
+        <h3>{{title}}</h3>
+    </div>
+    <div class="content">
+        <mat-form-field appearance="outline">
+            <mat-label>Nom</mat-label>
+            <input matInput placeholder="jean.." formControlName="name" required>
+            <mat-error *ngIf="formGroup.get('name').invalid">Veuillez saisir un nom correcte</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Age</mat-label>
+            <input matInput type="number" placeholder="15.." formControlName="age" required>
+            <mat-error *ngIf="formGroup.get('age').invalid">Veuillez saisir un age supérieur à 12 ans</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="actions">
+        <button type="button" mat-raised-button color="primary" (click)="close()">Annuler</button>
+        <button type="submit" mat-raised-button color="primary">OK</button>
+    </div>
+</form>

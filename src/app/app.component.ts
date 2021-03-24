@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'valentin';
+
+
+  isLogin: boolean = false;
+
+  login(data: boolean) {
+    this.isLogin = data;
+  }
 }

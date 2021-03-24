@@ -1,0 +1,35 @@
+<div class="container">
+    <div>
+        <div>
+            <button type="button" mat-raised-button color="primary" (click)="openDialog()">Ajouter card</button>
+        </div>
+        <div class="container-2">
+            <mat-card *ngFor="let card of cards;let index = index">
+                <mat-card-header>
+                    <mat-card-title>{{card.name}}
+                        <button type="button" mat-raised-button color="primary" (click)="editData(index, card)">Modifier</button>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <span>{{card.age}} an(s)</span>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+    </div>
+    <mat-card *ngFor="let propriete of proprietes">
+        <mat-card-header class="header">
+            <mat-card-title><p>{{propriete.nom}}</p><p>{{propriete.prix}} €</p></mat-card-title>
+            
+            
+        </mat-card-header>
+        <mat-card-subtitle>
+            <p>{{propriete.proprietaire.nom}}</p>
+        </mat-card-subtitle>
+        <mat-card-content>
+            <p>{{propriete.adresse}}</p>
+            <p>{{propriete.cp}}</p>
+            <p>{{propriete.ville}}</p>
+        </mat-card-content>        
+    </mat-card>
+</div>

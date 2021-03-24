@@ -1,0 +1,9 @@
+<div  class="container">
+    <div>
+        <h3 *ngIf="isLogin" style="color: white;">Jean Henry</h3>
+    </div>
+    <div>
+        <button mat-raised-button *ngIf="!isLogin" (click)="login()">Login</button>
+        <button mat-raised-button *ngIf="isLogin" (click)="logout()">Logout</button>
+    </div>
+</div>
